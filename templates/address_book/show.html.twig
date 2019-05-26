@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AddressBook{% endblock %}
+
+{% block body %}
+    <h1>AddressBook</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="w-25">Id</th>
+                <td>{{ address_book.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ address_book.Firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ address_book.Lastname }}</td>
+            </tr>
+            <tr>
+                <th>Street</th>
+                <td>{{ address_book.Street }}</td>
+            </tr>
+            <tr>
+                <th>Streetnumber</th>
+                <td>{{ address_book.Streetnumber }}</td>
+            </tr>
+            <tr>
+                <th>Zip</th>
+                <td>{{ address_book.Zip }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ address_book.City }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ address_book.Country }}</td>
+            </tr>
+            <tr>
+                <th>Phonenumber</th>
+                <td>{{ address_book.Phonenumber }}</td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td>{{ address_book.Birthday ? address_book.Birthday|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ address_book.Email }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{% if  address_book.Picture %}
+                    <img src="/media/images/{{ address_book.Picture }}" width="150", height="150">
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn badge-dark mr-4" href="{{ path('address_book_index') }}">back to list</a>
+
+    <a class="btn badge-info" href="{{ path('address_book_edit', {'id': address_book.id}) }}">edit</a>
+
+    {{ include('address_book/_delete_form.html.twig') }}
+{% endblock %}

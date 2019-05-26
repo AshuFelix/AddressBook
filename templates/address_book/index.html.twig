@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AddressBook index{% endblock %}
+
+{% block body %}
+    <h1>AddressBook index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Street</th>
+                <th>Number</th>
+                <th>Zip</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Phonenumber</th>
+                <th>Birthday</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for address_book in address_books %}
+            <tr>
+                <td>{{ address_book.id }}</td>
+                <td>{{ address_book.Firstname }}</td>
+                <td>{{ address_book.Lastname }}</td>
+                <td>{{ address_book.Street }}</td>
+                <td>{{ address_book.Streetnumber }}</td>
+                <td>{{ address_book.Zip }}</td>
+                <td>{{ address_book.City }}</td>
+                <td>{{ address_book.Country }}</td>
+                <td>{{ address_book.Phonenumber }}</td>
+                <td>{{ address_book.Birthday ? address_book.Birthday|date('Y-m-d') : '' }}</td>
+                <td>{{ address_book.Email }}</td>
+                <td>
+                    <a href="{{ path('address_book_show', {'id': address_book.id}) }}"><i class="far fa-eye"></i></a>
+                    <a href="{{ path('address_book_edit', {'id': address_book.id}) }}"><i class="far fa-edit"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('address_book_new') }}"><i class="fas fa-plus"></i> Neu</a>
+{% endblock %}
