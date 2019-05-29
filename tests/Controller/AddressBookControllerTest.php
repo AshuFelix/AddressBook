@@ -35,8 +35,8 @@ class AddressBookControllerTest extends WebTestCase
         return [
             ['/address/book/'],
             ['/address/book/new'],
-            ['/address/book/2'],
-            ['/address/book/2/edit'],
+            ['/address/book/1'],
+            ['/address/book/1/edit'],
 
         ];
     }

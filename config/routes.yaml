@@ -4,3 +4,9 @@
 #index:
 #    path: /
 #    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+index:
+    path: /{_locale}/address/book
+    defaults: {_controller: AppBundle:AddressBookController:index }
+    requirements:
+        _locale: en|fr|de

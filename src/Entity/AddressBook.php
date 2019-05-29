@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\AddressBookInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AddressBookRepository")
  */
-class AddressBook
+class AddressBook implements AddressBookInterface
 {
     /**
      * @ORM\Id()
@@ -81,7 +82,7 @@ class AddressBook
         return (string) $this->Firstname;
     }
 
-    public function setFirstname(string $Firstname): self
+    public function setFirstname(string $Firstname): AddressBookInterface
     {
         $this->Firstname = $Firstname;
 
@@ -93,7 +94,7 @@ class AddressBook
         return (string) $this->Lastname;
     }
 
-    public function setLastname(string $Lastname): self
+    public function setLastname(string $Lastname): AddressBookInterface
     {
         $this->Lastname = $Lastname;
 
@@ -105,7 +106,7 @@ class AddressBook
         return (string) $this->Street;
     }
 
-    public function setStreet(string $Street): self
+    public function setStreet(string $Street): AddressBookInterface
     {
         $this->Street = $Street;
 
@@ -117,7 +118,7 @@ class AddressBook
         return (string) $this->Streetnumber;
     }
 
-    public function setStreetnumber(string $Streetnumber): self
+    public function setStreetnumber(string $Streetnumber): AddressBookInterface
     {
         $this->Streetnumber = $Streetnumber;
 
@@ -129,7 +130,7 @@ class AddressBook
         return (int) $this->Zip;
     }
 
-    public function setZip(int $Zip): self
+    public function setZip(int $Zip): AddressBookInterface
     {
         $this->Zip = $Zip;
 
@@ -141,7 +142,7 @@ class AddressBook
         return (string) $this->City;
     }
 
-    public function setCity(string $City): self
+    public function setCity(string $City): AddressBookInterface
     {
         $this->City = $City;
 
@@ -153,7 +154,7 @@ class AddressBook
         return (string) $this->Country;
     }
 
-    public function setCountry(string $Country): self
+    public function setCountry(string $Country): AddressBookInterface
     {
         $this->Country = $Country;
 
@@ -165,7 +166,7 @@ class AddressBook
         return (string) $this->Phonenumber;
     }
 
-    public function setPhonenumber(string $Phonenumber): self
+    public function setPhonenumber(string $Phonenumber): AddressBookInterface
     {
         $this->Phonenumber = $Phonenumber;
 
@@ -177,7 +178,7 @@ class AddressBook
         return ( string ) $this->Birthday;
     }
 
-    public function setBirthday(string $Birthday): self
+    public function setBirthday(string $Birthday): AddressBookInterface
     {
         $this->Birthday = $Birthday;
 
@@ -189,7 +190,7 @@ class AddressBook
         return (string) $this->Email;
     }
 
-    public function setEmail(string $Email): self
+    public function setEmail(string $Email): AddressBookInterface
     {
         $this->Email = $Email;
 
@@ -201,7 +202,7 @@ class AddressBook
         return (string) $this->Picture;
     }
 
-    public function setPicture(string $Picture): self
+    public function setPicture(string $Picture): AddressBookInterface
     {
         $this->Picture = $Picture;
 

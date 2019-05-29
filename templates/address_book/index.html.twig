@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}AddressBook index{% endblock %}
+{% block title %}AddressBook index {% trans %} Test-title {% endtrans %}{% endblock %}
 
 {% block body %}
     <h1>AddressBook index</h1>
@@ -9,16 +9,16 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Street</th>
-                <th>Number</th>
-                <th>Zip</th>
-                <th>City</th>
-                <th>Country</th>
-                <th>Phonenumber</th>
-                <th>Birthday</th>
-                <th>Email</th>
+                <th>{% trans %}Firstname{% endtrans %}</th>
+                <th>{% trans %}Lastname{% endtrans %}</th>
+                <th>{% trans %}Street{% endtrans %}</th>
+                <th>{% trans %}Number{% endtrans %}</th>
+                <th>{% trans %}Zip{% endtrans %}</th>
+                <th>{% trans %}City{% endtrans %}</th>
+                <th>{% trans %}Country{% endtrans %}</th>
+                <th>{% trans %}Phonenumber{% endtrans %}</th>
+                <th>{% trans %}Birthday{% endtrans %}</th>
+                <th>{% trans %}Email{% endtrans %}</th>
                 <th>actions</th>
             </tr>
         </thead>
